@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amar Itapecerica — ONG de apoio à causa do autismo</title>
+<meta name="description" content="ONG Amar Itapecerica: conscientização sobre o autismo, apoio às famílias e inclusão social em Itapecerica/MG. Doe, seja voluntário ou apoie nossa causa." />
+
+<style>
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+
+/* ============================================================
+   TOKENS DE DESIGN
+   ============================================================ */
+:root {
+  --primary: #3A86FF;
+  --primary-dark: #2563EB;
+  --primary-soft: #EAF2FF;
+  --accent: #FFB84D;
+  --accent-dark: #F59E0B;
+  --text: #1F2937;
+  --text-soft: #6B7280;
+  --bg: #FFFFFF;
+  --bg-alt: #F7F9FC;
+  --border: #E5E7EB;
+  --shadow-sm: 0 2px 8px rgba(17, 24, 39, 0.05);
+  --shadow-md: 0 8px 24px rgba(17, 24, 39, 0.08);
+  --shadow-lg: 0 20px 40px rgba(58, 134, 255, 0.18);
+  --radius: 14px;
+  --radius-lg: 22px;
+  --container: 1180px;
+  --transition: 0.25s ease;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-primary { background: var(--primary); color: #fff; box-shadow: 0 6px 18px rgba(58,134,255,.35); }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(58,134,255,.45); }
+.btn-accent { background: var(--accent); color: #1F2937; box-shadow: 0 6px 18px rgba(255,184,77,.45); }
+.btn-accent:hover { background: var(--accent-dark); color: #fff; transform: translateY(-2px); }
+.btn-ghost { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+.btn-ghost:hover { background: var(--primary); color: #fff; }
+
+/* ============================================================
+   HEADER FIXO
+   ============================================================ */
+.header {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid transparent;
+  z-index: 1000;
+  transition: var(--transition);
+}
+.header.scrolled { border-bottom-color: var(--border); box-shadow: var(--shadow-sm); }
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; font-size: 19px; color: var(--text);
+}
+.logo-mark {
+  width: 38px; height: 38px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), #6BA8FF);
+  display: grid; place-items: center; color: #fff;
+  box-shadow: 0 6px 14px rgba(58,134,255,.35);
+}
+.logo-mark svg { width: 22px; height: 22px; }
+.logo span { color: var(--primary); }
+
+.nav-menu { display: flex; align-items: center; gap: 8px; }
+.nav-menu a {
+  padding: 8px 14px; border-radius: 10px;
+  color: var(--text); font-weight: 500; font-size: 15px;
+  transition: var(--transition);
+}
+.nav-menu a:hover { color: var(--primary); background: var(--primary-soft); }
+
+.nav-cta { display: flex; align-items: center; gap: 12px; }
+
+/* Hamburguer */
+.hamburger {
+  display: none;
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  align-items: center; justify-content: center;
+  flex-direction: column; gap: 5px;
+}
+.hamburger span {
+  width: 22px; height: 2px; background: var(--text); border-radius: 2px;
+  transition: var(--transition);
+}
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding: 140px 0 80px;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(255,184,77,.18), transparent 50%),
+    radial-gradient(circle at 10% 90%, rgba(58,134,255,.15), transparent 55%),
+    var(--bg);
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 14px; border-radius: 999px;
+  background: var(--primary-soft); color: var(--primary-dark);
+  font-size: 13px; font-weight: 600;
+  margin-bottom: 22px;
+}
+.hero-badge::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--primary); box-shadow: 0 0 0 4px rgba(58,134,255,.2);
+}
+.hero h1 {
+  font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.hero h1 .highlight {
+  background: linear-gradient(120deg, var(--primary), var(--accent));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero p {
+  font-size: 1.1rem; color: var(--text-soft);
+  margin-bottom: 32px; max-width: 540px;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Ilustração do Hero (placeholder em SVG/CSS) */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 6;
+  max-width: 520px;
+  min-height: 480px;
+  margin-left: auto;
+  justify-self: end;
+}
+.hero-visual .blob {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--primary), #8AB6FF);
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  animation: morph 12s ease-in-out infinite;
+  box-shadow: var(--shadow-lg);
+}
+.hero-visual .puzzle {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+}
+.hero-visual .puzzle svg { width: 60%; height: 60%; filter: drop-shadow(0 10px 20px rgba(0,0,0,.15)); }
+.hero-visual .float-card {
+  position: absolute; background: #fff; padding: 14px 18px;
+  border-radius: 16px; box-shadow: var(--shadow-md);
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 600;
+}
+.hero-visual .float-card.fc-1 { top: 8%; left: -6%; animation: floatY 4s ease-in-out infinite; z-index: 2; }
+.hero-visual .float-card.fc-2 { bottom: 10%; right: -4%; animation: floatY 5s ease-in-out infinite reverse; z-index: 2; }
+.float-card .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.float-card.fc-1 .dot { background: var(--primary); }
+
+@keyframes morph {
+  0%,100% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }
+  50%     { border-radius: 60% 40% 35% 65% / 55% 60% 40% 45%; }
+}
+@keyframes floatY {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-12px); }
+}
+
+/* ============================================================
+   SEÇÕES GERAIS
+   ============================================================ */
+section { padding: 90px 0; }
+.section-head { text-align: center; max-width: 680px; margin: 0 auto 56px; }
+.section-tag {
+  display: inline-block;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--primary); text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-head h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+.section-head p { color: var(--text-soft); font-size: 1.05rem; }
+
+/* ============================================================
+   SOBRE
+   ============================================================ */
+.sobre { background: var(--bg-alt); }
+.sobre-intro {
+  max-width: 820px; margin: 0 auto 56px;
+  text-align: center; color: var(--text-soft); font-size: 1.05rem;
+}
+.cards-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.card {
+  background: #fff; padding: 32px 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-soft);
+}
+.card-icon {
+  width: 56px; height: 56px; border-radius: 16px;
+  display: grid; place-items: center;
+  background: var(--primary-soft); color: var(--primary);
+  margin-bottom: 18px;
+}
+.card-icon svg { width: 28px; height: 28px; }
+.card h3 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; }
+.card p { color: var(--text-soft); font-size: 0.97rem; }
+
+/* ============================================================
+   PROJETOS
+   ============================================================ */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.projeto {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex; flex-direction: column;
+}
+.projeto:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.projeto-img {
+  height: 180px;
+  display: grid; place-items: center;
+  position: relative; overflow: hidden;
+}
+.projeto-img.bg1 { background: linear-gradient(135deg, #3A86FF, #6BA8FF); }
+.projeto-img.bg2 { background: linear-gradient(135deg, #FFB84D, #FFD089); }
+.projeto-img.bg3 { background: linear-gradient(135deg, #5BBFA0, #8FD9C2); }
+.projeto-img svg { width: 70px; height: 70px; color: #fff; opacity: 0.95; }
+.projeto-body { padding: 26px 24px 28px; flex: 1; display: flex; flex-direction: column; }
+.projeto-body h3 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; }
+.projeto-body p { color: var(--text-soft); font-size: 0.96rem; flex: 1; }
+.projeto-link {
+  margin-top: 18px; color: var(--primary); font-weight: 600; font-size: 14px;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.projeto-link:hover { gap: 10px; }
+
+/* ============================================================
+   COMO AJUDAR
+   ============================================================ */
+.ajudar { background: var(--bg-alt); }
+.ajudar-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.ajudar-card {
+  background: #fff; border-radius: var(--radius-lg);
+  padding: 36px 28px; text-align: center;
+  box-shadow: var(--shadow-sm); transition: var(--transition);
+}
+.ajudar-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.ajudar-card .card-icon { margin: 0 auto 20px; width: 64px; height: 64px; }
+.ajudar-card h3 { margin-bottom: 12px; font-size: 1.25rem; }
+.ajudar-card p { color: var(--text-soft); margin-bottom: 22px; }
+.ajudar-card.featured {
+  background: linear-gradient(160deg, var(--primary), var(--primary-dark));
+  color: #fff;
+}
+.ajudar-card.featured .card-icon { background: rgba(255,255,255,.18); color: #fff; }
+.ajudar-card.featured p { color: rgba(255,255,255,.9); }
+.ajudar-card.featured .btn-ghost { color: #fff; border-color: #fff; }
+.ajudar-card.featured .btn-ghost:hover { background: #fff; color: var(--primary); }
+
+/* ============================================================
+   IMPACTO
+   ============================================================ */
+.impacto {
+  background: linear-gradient(135deg, #1E3A8A, #3A86FF);
+  color: #fff;
+  position: relative; overflow: hidden;
+}
+.impacto::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255,184,77,.25), transparent 50%);
+  pointer-events: none;
+}
+.impacto .section-head h2 { color: #fff; }
+.impacto .section-head p { color: rgba(255,255,255,.85); }
+.impacto .section-tag { color: var(--accent); }
+.impacto-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  position: relative;
+}
+.stat { text-align: center; padding: 24px; }
+.stat-num {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 800; letter-spacing: -0.02em;
+  color: var(--accent);
+  line-height: 1;
+}
+.stat-label {
+  margin-top: 10px; font-size: 0.98rem;
+  color: rgba(255,255,255,.9); font-weight: 500;
+}
+
+/* ============================================================
+   DEPOIMENTOS
+   ============================================================ */
+.depoimentos-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.depoimento {
+  background: #fff; border-radius: var(--radius-lg);
+  padding: 32px 28px; box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: var(--transition);
+}
+.depoimento:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.depoimento .quote-mark {
+  position: absolute; top: 18px; right: 22px;
+  font-size: 4rem; line-height: 1; color: var(--primary-soft);
+  font-family: Georgia, serif;
+}
+.depoimento p {
+  color: var(--text); font-style: italic; margin-bottom: 22px;
+  position: relative; z-index: 1;
+}
+.depoimento-autor { display: flex; align-items: center; gap: 12px; }
+.avatar {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff; display: grid; place-items: center;
+  font-weight: 700; font-size: 16px;
+}
+.autor-info strong { display: block; font-size: 15px; }
+.autor-info small { color: var(--text-soft); font-size: 13px; }
+
+/* ============================================================
+   CONTATO
+   ============================================================ */
+.contato { background: var(--bg-alt); }
+.contato-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  align-items: start;
+}
+.contato-info { padding: 8px; }
+.contato-info h3 { font-size: 1.4rem; margin-bottom: 16px; }
+.contato-info > p { color: var(--text-soft); margin-bottom: 28px; }
+.info-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  margin-bottom: 18px;
+}
+.info-item .ic {
+  width: 42px; height: 42px; border-radius: 12px;
+  background: var(--primary-soft); color: var(--primary);
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.info-item .ic svg { width: 20px; height: 20px; }
+.info-item strong { display: block; font-size: 14px; margin-bottom: 2px; }
+.info-item span { color: var(--text-soft); font-size: 14px; }
+
+.mapa {
+  margin-top: 24px;
+  height: 200px; border-radius: var(--radius);
+  background: linear-gradient(135deg, #DBEAFE, #EAF2FF);
+  position: relative; overflow: hidden;
+  display: grid; place-items: center;
+  border: 1px solid var(--border);
+}
+.mapa::before {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(58,134,255,.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58,134,255,.12) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+.mapa-pin {
+  position: relative; z-index: 1; text-align: center;
+}
+.mapa-pin svg { width: 38px; height: 38px; color: var(--primary); margin-bottom: 6px; }
+.mapa-pin small { display: block; font-size: 13px; color: var(--text-soft); font-weight: 600; }
+
+/* Formulário */
+.form {
+  background: #fff; padding: 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px;
+}
+.form-group input, .form-group textarea {
+  width: 100%; padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font: inherit; font-size: 15px;
+  background: #fff; color: var(--text);
+  transition: var(--transition);
+}
+.form-group input:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(58,134,255,.12);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form .btn-primary { width: 100%; padding: 14px; }
+.form-msg {
+  margin-top: 12px; padding: 12px;
+  background: #DCFCE7; color: #166534;
+  border-radius: 10px; font-size: 14px; font-weight: 500;
+  display: none;
+}
+.form-msg.show { display: block; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: #0F172A;
+  color: #CBD5E1;
+  padding: 70px 0 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 50px;
+}
+.footer h4 { color: #fff; font-size: 1rem; margin-bottom: 18px; font-weight: 700; }
+.footer .logo { color: #fff; margin-bottom: 16px; }
+.footer-about p { font-size: 14px; color: #94A3B8; margin-bottom: 20px; }
+.footer ul { list-style: none; }
+.footer ul li { margin-bottom: 10px; }
+.footer ul a { color: #94A3B8; font-size: 14px; transition: var(--transition); }
+.footer ul a:hover { color: var(--accent); }
+.socials { display: flex; gap: 10px; }
+.socials a {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: rgba(255,255,255,.08);
+  display: grid; place-items: center;
+  color: #fff; transition: var(--transition);
+}
+.socials a:hover { background: var(--primary); transform: translateY(-2px); }
+.socials svg { width: 18px; height: 18px; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 22px 0;
+  text-align: center;
+  font-size: 13px; color: #64748B;
+}
+
+/* ============================================================
+   ANIMAÇÕES (fade-in on scroll)
+   ============================================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media (max-width: 960px) {
+  .hero { padding: 120px 0 60px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+  .hero-actions { justify-content: center; }
+  .hero p { margin-left: auto; margin-right: auto; }
+  .hero-visual { margin: 0 auto; max-width: 360px; }
+
+  section { padding: 70px 0; }
+  .cards-3, .projetos-grid, .ajudar-grid, .depoimentos-grid { grid-template-columns: 1fr; }
+  .impacto-grid { grid-template-columns: repeat(2, 1fr); }
+  .contato-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+
+  .hamburger { display: flex; }
+  .nav-menu {
+    position: fixed; top: 72px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 4px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-150%);
+    transition: transform .35s ease;
+    border-top: 1px solid var(--border);
+  }
+  .nav-menu.open { transform: translateY(0); }
+  .nav-menu a { padding: 14px 16px; border-radius: 10px; }
+  .nav-cta .btn { padding: 10px 18px; font-size: 14px; }
+}
+@media (max-width: 520px) {
+  .impacto-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2rem; }
+  .form { padding: 24px; }
+  .nav-cta .btn { padding: 9px 14px; }
+  .logo { font-size: 17px; }
+}
+
+/* ============================================================
+   IMAGENS DAS SEÇÕES
+   ============================================================ */
+.hero-photo {
+  position: absolute; inset: 0;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.hero-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero-photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(58,134,255,.18), rgba(255,184,77,.10) 60%, transparent);
+  pointer-events: none;
+}
+.sobre-media {
+  display: grid; grid-template-columns: 1.05fr 1fr;
+  gap: 50px; align-items: center;
+  margin-bottom: 64px;
+}
+.sobre-media .img-wrap {
+  position: relative; aspect-ratio: 4/5;
+  border-radius: var(--radius-lg);
+  overflow: hidden; box-shadow: var(--shadow-md);
+}
+.sobre-media .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.sobre-media .img-wrap::before {
+  content: ""; position: absolute; inset: auto -18px -18px auto;
+  width: 120px; height: 120px; border-radius: 28px;
+  background: linear-gradient(135deg, var(--accent), #FFD089);
+  z-index: -1;
+}
+.sobre-media .img-wrap::after {
+  content: ""; position: absolute; inset: -18px auto auto -18px;
+  width: 90px; height: 90px; border-radius: 22px;
+  background: var(--primary-soft);
+  z-index: -1;
+}
+.sobre-media .text h3 {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 800; letter-spacing: -.015em;
+  margin-bottom: 16px; line-height: 1.2;
+}
+.sobre-media .text p { color: var(--text-soft); margin-bottom: 14px; }
+
+/* Projetos: substituir bloco de cor sólida por foto */
+.projeto-img {
+  height: 200px;
+  background-size: cover; background-position: center;
+  position: relative;
+}
+.projeto-img::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,.55));
+}
+.projeto-img svg { display: none; }
+.projeto-img.bg1 { background-image: url('images/projeto-familias.jpg'); }
+.projeto-img.bg2 { background-image: url('images/projeto-escola.jpg'); }
+.projeto-img.bg3 { background-image: url('images/projeto-conscientizacao.jpg'); }
+
+/* Impacto: foto de fundo */
+.impacto {
+  background:
+    linear-gradient(135deg, rgba(30,58,138,.92), rgba(58,134,255,.85)),
+    url('images/impacto.jpg') center/cover no-repeat;
+}
+
+/* Avatares com foto nos depoimentos */
+.avatar.photo {
+  background-size: cover; background-position: center;
+  background-repeat: no-repeat;
+  color: transparent;
+}
+.avatar.ph1 { background-image: url('images/depoimento-1.jpg'); }
+.avatar.ph2 { background-image: url('images/depoimento-2.jpg'); }
+.avatar.ph3 { background-image: url('images/depoimento-3.jpg'); }
+
+@media (max-width: 960px) {
+  .sobre-media { grid-template-columns: 1fr; gap: 36px; }
+  .sobre-media .img-wrap { max-width: 420px; margin: 0 auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER FIXO + NAVEGAÇÃO
+     ============================================================ -->
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="#inicio" class="logo" aria-label="Amar Itapecerica - Início">
+      <span class="logo-mark" aria-hidden="true">
+        <!-- ícone de coração -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9C.8 8.5 2.7 4 7 4c2.2 0 3.7 1.2 5 3 1.3-1.8 2.8-3 5-3 4.3 0 6.2 4.5 4.5 8-2.5 4.5-9.5 9-9.5 9z"/></svg>
+      </span>
+      Amar <span>Itapecerica</span>
+    </a>
+
+    <nav class="nav-menu" id="navMenu" aria-label="Menu principal">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#ajudar">Como Ajudar</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="#ajudar" class="btn btn-accent">Doar</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div class="hero-content fade-in">
+      <span class="hero-badge">ONG sem fins lucrativos · Itapecerica/MG</span>
+      <h1>Transformando informação em <span class="highlight">inclusão</span>.</h1>
+      <p>
+        A Amar Itapecerica acolhe famílias, promove a conscientização sobre o
+        autismo e constrói pontes para uma sociedade mais inclusiva, empática e
+        acessível para todos.
+      </p>
+      <div class="hero-actions">
+        <a href="#projetos" class="btn btn-primary">Conheça nosso trabalho</a>
+        <a href="#ajudar" class="btn btn-ghost">Quero ajudar</a>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-in" aria-hidden="true">
+      <div class="hero-photo"><img src="images/hero.jpg" alt="Crianças e famílias sorrindo juntas" /></div>
+      <div class="float-card fc-1"><span class="dot"></span> +500 famílias acolhidas</div>
+      <div class="float-card fc-2"><span class="dot"></span> Apoio contínuo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOBRE
+     ============================================================ -->
+<section class="sobre" id="sobre">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-tag">Quem somos</span>
+      <h2>Uma rede de apoio construída com amor</h2>
+      <p>
+        Somos uma organização independente, formada por famílias, profissionais
+        e voluntários comprometidos com a causa do autismo em Itapecerica e região.
+      </p>
+    </div>
+
+    <div class="sobre-media fade-in">
+      <div class="img-wrap">
+        <img src="images/sobre.jpg" alt="Mãe abraçando seu filho com carinho" loading="lazy" />
+      </div>
+      <div class="text">
+        <h3>Mais de uma década acolhendo quem mais precisa</h3>
+        <p>A Amar Itapecerica nasceu da união de famílias atípicas que buscavam
+        informação, apoio mútuo e respeito para seus filhos. Hoje, somos
+        referência regional em ações de inclusão e conscientização sobre o autismo.</p>
+        <p>Acreditamos que a inclusão começa pela escuta — e que cada criança,
+        adolescente e adulto autista merece oportunidades reais para florescer.</p>
+      </div>
+    </div>
+
+    <div class="cards-3">
+      <article class="card fade-in">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+        </div>
+        <h3>Missão</h3>
+        <p>Promover a inclusão de pessoas com autismo por meio de informação,
+        acolhimento às famílias e ações de impacto na comunidade.</p>
+      </article>
+
+      <article class="card fade-in">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Visão</h3>
+        <p>Construir, até 2030, uma cidade reconhecida pela acessibilidade,
+        respeito e oportunidades reais para pessoas neurodivergentes.</p>
+      </article>
+
+      <article class="card fade-in">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        </div>
+        <h3>Valores</h3>
+        <p>Empatia, transparência, respeito à diversidade e compromisso com
+        cada família que cruza o nosso caminho.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJETOS
+     ============================================================ -->
+<section id="projetos">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-tag">O que fazemos</span>
+      <h2>Projetos que mudam vidas</h2>
+      <p>Iniciativas contínuas que conectam famílias, escolas e a comunidade
+      em torno de uma cultura de inclusão.</p>
+    </div>
+
+    <div class="projetos-grid">
+      <article class="projeto fade-in">
+        <div class="projeto-img bg1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="projeto-body">
+          <h3>Roda de Famílias</h3>
+          <p>Encontros mensais de troca de experiências entre pais e
+          responsáveis, com mediação de psicólogos voluntários.</p>
+          <a href="#contato" class="projeto-link">Saiba mais →</a>
+        </div>
+      </article>
+
+      <article class="projeto fade-in">
+        <div class="projeto-img bg2" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="projeto-body">
+          <h3>Escola Inclui</h3>
+          <p>Capacitação de professores e equipes pedagógicas para receber
+          alunos autistas com qualidade e acolhimento.</p>
+          <a href="#contato" class="projeto-link">Saiba mais →</a>
+        </div>
+      </article>
+
+      <article class="projeto fade-in">
+        <div class="projeto-img bg3" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="projeto-body">
+          <h3>Abril Azul</h3>
+          <p>Mês de campanhas, palestras gratuitas e ações públicas para
+          conscientizar a cidade sobre o Transtorno do Espectro Autista.</p>
+          <a href="#contato" class="projeto-link">Saiba mais →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     COMO AJUDAR
+     ============================================================ -->
+<section class="ajudar" id="ajudar">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-tag">Junte-se a nós</span>
+      <h2>Existem várias formas de fazer a diferença</h2>
+      <p>Toda contribuição — financeira, em tempo ou em parceria — chega a
+      famílias que precisam de você.</p>
+    </div>
+
+    <div class="ajudar-grid">
+      <div class="ajudar-card featured fade-in">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9C.8 8.5 2.7 4 7 4c2.2 0 3.7 1.2 5 3 1.3-1.8 2.8-3 5-3 4.3 0 6.2 4.5 4.5 8-2.5 4.5-9.5 9-9.5 9z"/></svg>
+        </div>
+        <h3>Faça uma doação</h3>
+        <p>Sua contribuição mantém nossos projetos ativos durante todo o ano.</p>
+        <a href="#contato" class="btn btn-ghost">Quero doar</a>
+      </div>
+
+      <div class="ajudar-card fade-in">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 8v6M18 11h6"/></svg>
+        </div>
+        <h3>Seja voluntário</h3>
+        <p>Doe seu tempo e talento. Temos espaço para todos: profissionais,
+        estudantes e famílias.</p>
+        <a href="#contato" class="btn btn-primary">Quero participar</a>
+      </div>
+
+      <div class="ajudar-card fade-in">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+        </div>
+        <h3>Parcerias</h3>
+        <p>É uma empresa? Apoie nossa causa com responsabilidade social e
+        amplie o impacto.</p>
+        <a href="#contato" class="btn btn-primary">Falar com a equipe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     IMPACTO
+     ============================================================ -->
+<section class="impacto">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-tag">Nossos números</span>
+      <h2>O impacto da nossa rede</h2>
+      <p>Resultados de anos de trabalho coletivo, voluntariado e o apoio
+      essencial de pessoas como você.</p>
+    </div>
+
+    <div class="impacto-grid">
+      <div class="stat fade-in">
+        <div class="stat-num" data-count="520">0</div>
+        <div class="stat-label">Famílias atendidas</div>
+      </div>
+      <div class="stat fade-in">
+        <div class="stat-num" data-count="48">0</div>
+        <div class="stat-label">Eventos realizados</div>
+      </div>
+      <div class="stat fade-in">
+        <div class="stat-num" data-count="120">0</div>
+        <div class="stat-label">Voluntários ativos</div>
+      </div>
+      <div class="stat fade-in">
+        <div class="stat-num" data-count="15">0</div>
+        <div class="stat-label">Escolas parceiras</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DEPOIMENTOS
+     ============================================================ -->
+<section id="depoimentos">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-tag">Depoimentos</span>
+      <h2>Histórias que nos movem</h2>
+    </div>
+
+    <div class="depoimentos-grid">
+      <div class="depoimento fade-in">
+        <span class="quote-mark" aria-hidden="true">”</span>
+        <p>Quando recebi o diagnóstico do meu filho, me senti perdida. A Amar
+        Itapecerica me mostrou que eu não estava sozinha. Hoje somos uma
+        família mais forte.</p>
+        <div class="depoimento-autor">
+          <div class="avatar photo ph1" role="img" aria-label="Foto de Carla Mendes"></div>
+          <div class="autor-info"><strong>Carla Mendes</strong><small>Mãe atípica</small></div>
+        </div>
+      </div>
+
+      <div class="depoimento fade-in">
+        <span class="quote-mark" aria-hidden="true">”</span>
+        <p>Ser voluntário aqui transformou a forma como enxergo a inclusão.
+        Cada encontro é uma lição de empatia e propósito.</p>
+        <div class="depoimento-autor">
+          <div class="avatar photo ph2" role="img" aria-label="Foto de Rafael Souza"></div>
+          <div class="autor-info"><strong>Rafael Souza</strong><small>Voluntário há 3 anos</small></div>
+        </div>
+      </div>
+
+      <div class="depoimento fade-in">
+        <span class="quote-mark" aria-hidden="true">”</span>
+        <p>O projeto Escola Inclui mudou completamente nossa rotina escolar.
+        Os professores hoje têm preparo e olhar humano para nossas crianças.</p>
+        <div class="depoimento-autor">
+          <div class="avatar photo ph3" role="img" aria-label="Foto de Juliana Prado"></div>
+          <div class="autor-info"><strong>Juliana Prado</strong><small>Diretora pedagógica</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTATO
+     ============================================================ -->
+<section class="contato" id="contato">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-tag">Fale conosco</span>
+      <h2>Vamos construir juntos uma cidade mais inclusiva</h2>
+      <p>Tem dúvidas, quer doar, se voluntariar ou propor uma parceria?
+      Adoraríamos ouvir você.</p>
+    </div>
+
+    <div class="contato-grid">
+      <div class="contato-info fade-in">
+        <h3>Informações de contato</h3>
+        <p>Estamos disponíveis de segunda a sexta, das 9h às 17h.</p>
+
+        <div class="info-item">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><strong>Endereço</strong><span>Itapecerica/MG · Centro</span></div>
+        </div>
+
+        <div class="info-item">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg></div>
+          <div><strong>E-mail</strong><span>contato@amaritapecerica.org.br</span></div>
+        </div>
+
+        <div class="info-item">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.3 1L7 10.5a16 16 0 0 0 6.5 6.5l1.7-1.7a1 1 0 0 1 1-.3l4 1a1 1 0 0 1 .8 1z"/></svg></div>
+          <div><strong>Telefone</strong><span>(37) 99999-0000</span></div>
+        </div>
+
+        <div class="mapa" role="img" aria-label="Mapa de Itapecerica/MG (placeholder)">
+          <div class="mapa-pin">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+            <small>Itapecerica · Minas Gerais</small>
+          </div>
+        </div>
+      </div>
+
+      <form class="form fade-in" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Como podemos te ajudar?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+        <div class="form-msg" id="formMsg">✓ Mensagem enviada! Entraremos em contato em breve.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a href="#inicio" class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9C.8 8.5 2.7 4 7 4c2.2 0 3.7 1.2 5 3 1.3-1.8 2.8-3 5-3 4.3 0 6.2 4.5 4.5 8-2.5 4.5-9.5 9-9.5 9z"/></svg>
+        </span>
+        Amar Itapecerica
+      </a>
+      <p>ONG dedicada à causa do autismo em Itapecerica/MG: conscientização,
+      apoio às famílias e inclusão social.</p>
+      <div class="socials" aria-label="Redes sociais">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.5c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.5.7-1.5 1.5V12h2.6l-.4 3h-2.2v7A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 3.9A11 11 0 0 0 3.4 18.4L2 22l3.7-1.3A11 11 0 0 0 20 3.9zm-7.9 16.4a9 9 0 0 1-4.6-1.3l-.3-.2-2.2.7.8-2.1-.2-.3a9 9 0 1 1 6.5 3.2zm5-6.7c-.3-.2-1.7-.8-1.9-.9s-.5-.1-.7.2-.7.9-.9 1.1-.4.2-.6.1c-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.7-1.5-1.9s0-.4.1-.5l.4-.5c.1-.2.2-.3.2-.5s-.1-.4-.1-.5-.7-1.7-.9-2.3-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1.1 2.8 1.2 3 2.2 3.3 5.2 4.6c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4s.3-1.2.2-1.4-.3-.2-.6-.4z"/></svg></a>
+      </div>
+    </div>
+
+    <div>
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#ajudar">Como Ajudar</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Institucional</h4>
+      <ul>
+        <li><a href="#sobre">Quem somos</a></li>
+        <li><a href="#projetos">Transparência</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#ajudar">Seja voluntário</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Contato</h4>
+      <ul>
+        <li>Itapecerica/MG</li>
+        <li>contato@amaritapecerica.org.br</li>
+        <li>(37) 99999-0000</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Amar Itapecerica. Todos os direitos reservados. Feito com 💙 para a causa do autismo.
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   JS — Interações
+   ============================================================ */
+
+// 1) Header com sombra ao rolar
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// 2) Menu hambúrguer (mobile)
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+hamburger.addEventListener('click', () => {
+  const open = navMenu.classList.toggle('open');
+  hamburger.classList.toggle('active', open);
+  hamburger.setAttribute('aria-expanded', open);
+});
+// Fecha o menu ao clicar em um link
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', false);
+  });
+});
+
+// 3) Fade-in ao scroll (IntersectionObserver)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// 4) Contador animado dos números de impacto
+const counters = document.querySelectorAll('.stat-num');
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = +el.dataset.count;
+      const duration = 1600;
+      const start = performance.now();
+      const animate = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        // easeOutCubic
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + (p === 1 ? '+' : '');
+        if (p < 1) requestAnimationFrame(animate);
+      };
+      requestAnimationFrame(animate);
+      counterObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.4 });
+counters.forEach(c => counterObs.observe(c));
+
+// 5) Formulário de contato (simulação)
+const form = document.getElementById('contactForm');
+const formMsg = document.getElementById('formMsg');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+  formMsg.classList.add('show');
+  form.reset();
+  setTimeout(() => formMsg.classList.remove('show'), 5000);
+});
+</script>
+
+</body>
+</html>
