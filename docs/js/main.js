@@ -1,0 +1,104 @@
+/* ============================================================
+   JS — Interações
+   ============================================================ */
+
+/* ============================================================
+envio de email https://dashboard.emailjs.com/
+============================================================ */
+if (typeof emailjs !== 'undefined') {
+  emailjs.init({ publicKey: 'Ffh2Wy-R9kRrghhj0' });
+
+  document.getElementById('formContato').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.send('service_q66140s', 'template_gbyr9ur', {
+      nome: document.getElementById('nome').value,
+      email: document.getElementById('email').value,
+      mensagem: document.getElementById('mensagem').value
+    })
+    .then(function() {
+      const statusEl = document.getElementById('formMsg');
+      statusEl.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
+      statusEl.classList.add('show');
+    }, function(error) {
+      const statusEl = document.getElementById('formMsg');
+      statusEl.textContent = 'Erro ao enviar: ' + (error?.text || 'tente novamente.');
+      statusEl.classList.add('show');
+    });
+  });
+} else {
+  console.error('EmailJS nao carregou. Verifique a conexao ou bloqueios de script.');
+}
+
+
+// 1) Header com sombra ao rolar
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// 2) Menu hambúrguer (mobile)
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+hamburger.addEventListener('click', () => {
+  const open = navMenu.classList.toggle('open');
+  hamburger.classList.toggle('active', open);
+  hamburger.setAttribute('aria-expanded', open);
+});
+// Fecha o menu ao clicar em um link
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', false);
+  });
+});
+
+// 3) Fade-in ao scroll (IntersectionObserver)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+const counters = document.querySelectorAll('.stat-num');
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = +el.dataset.count;
+      const duration = 1600;
+      const start = performance.now();
+      const animate = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        // easeOutCubic
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + (p === 1 ? '+' : '');
+        if (p < 1) requestAnimationFrame(animate);
+      };
+      requestAnimationFrame(animate);
+      counterObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.4 });
+counters.forEach(c => counterObs.observe(c));
+
+// 5) Formulário de contato (simulação)
+const form = document.getElementById('formContato');
+const formMsg = document.getElementById('formMsg');
+if (form && typeof emailjs === 'undefined') {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    formMsg.classList.add('show');
+    form.reset();
+    setTimeout(() => formMsg.classList.remove('show'), 5000);
+  });
+}
