@@ -510,7 +510,14 @@ section { padding: 90px 0; }
   border-top: 1px solid rgba(255,255,255,.08);
   padding: 22px 0;
   text-align: center;
+  position: relative;
   font-size: 13px; color: #64748B;
+}
+.footer-bottom .design-credit {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* ============================================================
@@ -561,6 +568,16 @@ section { padding: 90px 0; }
   .form { padding: 24px; }
   .nav-cta .btn { padding: 9px 14px; }
   .logo { font-size: 17px; }
+  .footer-bottom {
+    padding: 18px 14px;
+  }
+  .footer-bottom .design-credit {
+    position: static;
+    display: block;
+    transform: none;
+    text-align: right;
+    margin-top: 6px;
+  }
 }
 
 /* ============================================================
@@ -958,12 +975,12 @@ section { padding: 90px 0; }
     <div class="contato-grid">
       <div class="contato-info fade-in">
         <h3>Informações de contato</h3>
-        <p>Estamos disponíveis de segunda a sexta, das 9h às 17h.</p>
+        <!-- <p>Estamos disponíveis de segunda a sexta, das 9h às 17h.</p> -->
 
-        <div class="info-item">
+        <!-- <div class="info-item">
           <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div><strong>Endereço</strong><span>Itapecerica/MG · Centro</span></div>
-        </div>
+        </div> -->
 
         <div class="info-item">
           <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg></div>
@@ -1049,12 +1066,14 @@ section { padding: 90px 0; }
       <ul>
         <li>Itapecerica/MG</li>
         <li>contato@amaritapecerica.org.br</li>
-        <li>(37) 99999-0000</li>
+        <!-- <li>(37) 99999-0000</li> -->
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    © 2025 Amar Itapecerica. Todos os direitos reservados. Feito com 💙 para a causa do autismo.
+    <span>© 2025 Amar Itapecerica. Todos os direitos reservados.</span>
+    <span>Feito com 💙 para a causa do autismo.</span>
+    <span class="design-credit">Desenvolvido por Jota</span>
   </div>
 </footer>
 
