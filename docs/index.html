@@ -1,426 +1,528 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Amar Itapecerica — ONG de apoio à causa do autismo</title>
-<meta name="description" content="ONG Amar Itapecerica: conscientização sobre o autismo, apoio às famílias e inclusão social em Itapecerica/MG. Doe, seja voluntário ou apoie nossa causa." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amar Itapecerica — ONG de apoio à causa do autismo</title>
+    <meta
+      name="description"
+      content="ONG Amar Itapecerica: conscientização sobre o autismo, apoio às famílias e inclusão social em Itapecerica/MG. Doe, seja voluntário ou apoie nossa causa."
+    />
+    <link rel="icon" type="image/jpeg" href="images/amar-logo-100X100.jpeg" />
 
-<link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-
-<!-- ============================================================
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ============================================================
      HEADER FIXO + NAVEGAÇÃO
      ============================================================ -->
-<header class="header" id="header">
-  <div class="container nav">
-    <a href="#inicio" class="logo" aria-label="Amar Itapecerica - Início">
-      <span class="logo-mark" aria-hidden="true">
-        <!-- ícone de coração -->
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9C.8 8.5 2.7 4 7 4c2.2 0 3.7 1.2 5 3 1.3-1.8 2.8-3 5-3 4.3 0 6.2 4.5 4.5 8-2.5 4.5-9.5 9-9.5 9z"/></svg>
-      </span>
-      Amar <span>Itapecerica</span>
-    </a>
+    <header class="header" id="header">
+      <div class="container nav">
+        <a href="#inicio" class="logo" aria-label="Amar Itapecerica - Início">
+          <img class="logo-mark" src="images/amar-logo-sem-texto.png" alt="" aria-hidden="true" />
+          Amar <span>Itapecerica</span>
+        </a>
 
-    <nav class="nav-menu" id="navMenu" aria-label="Menu principal">
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#ajudar">Como Ajudar</a>
-      <a href="#contato">Contato</a>
-    </nav>
+        <nav class="nav-menu" id="navMenu" aria-label="Menu principal">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#ajudar">Como Ajudar</a>
+          <a href="#contato">Contato</a>
+        </nav>
 
-    <div class="nav-cta">
-      <a href="#ajudar" class="btn btn-accent">Doar</a>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
+        <div class="nav-cta">
+          <a href="#ajudar" class="btn btn-accent">Doar</a>
+          <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
 
-<!-- ============================================================
+    <!-- ============================================================
      HERO
      ============================================================ -->
-<section class="hero" id="inicio">
-  <div class="container hero-grid">
-    <div class="hero-content fade-in">
-      <span class="hero-badge">ONG sem fins lucrativos · Itapecerica/MG</span>
-      <h1>Transformando informação em <span class="highlight">inclusão</span>.</h1>
-      <p>
-        A Amar Itapecerica acolhe famílias, promove a conscientização sobre o
-        autismo e constrói pontes para uma sociedade mais inclusiva, empática e
-        acessível para todos.
-      </p>
-      <div class="hero-actions">
-        <a href="#projetos" class="btn btn-primary">Conheça nosso trabalho</a>
-        <a href="#ajudar" class="btn btn-ghost">Quero ajudar</a>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-content fade-in">
+          <span class="hero-badge">ONG sem fins lucrativos · Itapecerica/MG</span>
+          <h1>Transformando informação em <span class="highlight">inclusão</span>.</h1>
+          <p>
+            A Amar Itapecerica acolhe famílias, promove a conscientização sobre o autismo e constrói
+            pontes para uma sociedade mais inclusiva, empática e acessível para todos.
+          </p>
+          <div class="hero-actions">
+            <a href="#projetos" class="btn btn-primary">Conheça nosso trabalho</a>
+            <a href="#ajudar" class="btn btn-ghost">Quero ajudar</a>
+          </div>
+        </div>
+
+        <div class="hero-visual fade-in" aria-hidden="true">
+          <div class="hero-photo">
+            <img src="images/amar-logo-original.jpeg" alt="Crianças e famílias sorrindo juntas" />
+          </div>
+          <div class="float-card fc-1"><span class="dot"></span> Famílias acolhidas</div>
+          <div class="float-card fc-2"><span class="dot"></span> Apoio contínuo</div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="hero-visual fade-in" aria-hidden="true">
-      <div class="hero-photo"><img src="images/hero.jpg" alt="Crianças e famílias sorrindo juntas" /></div>
-      <div class="float-card fc-1"><span class="dot"></span> Famílias acolhidas</div>
-      <div class="float-card fc-2"><span class="dot"></span> Apoio contínuo</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
+    <!-- ============================================================
      SOBRE
      ============================================================ -->
-<section class="sobre" id="sobre">
-  <div class="container">
-    <div class="section-head fade-in">
-      <span class="section-tag">Quem somos</span>
-      <h2>Uma rede de apoio construída com amor</h2>
-      <p>
-        Somos uma organização independente, formada por famílias, profissionais
-        e voluntários comprometidos com a causa do autismo em Itapecerica e região.
-      </p>
-    </div>
+    <section class="sobre" id="sobre">
+      <div class="container">
+        <div class="section-head fade-in">
+          <span class="section-tag">Quem somos</span>
+          <h2>Uma rede de apoio construída com amor</h2>
+          <p>
+            Somos uma organização independente, formada por famílias, profissionais e voluntários
+            comprometidos com a causa do autismo em Itapecerica e região.
+          </p>
+        </div>
 
-    <div class="sobre-media fade-in">
-      <div class="img-wrap">
-        <img src="images/sobre.jpg" alt="Mãe abraçando seu filho com carinho" loading="lazy" />
+        <div class="sobre-media fade-in">
+          <div class="img-wrap">
+            <img src="images/sobre.jpg" alt="Mãe abraçando seu filho com carinho" loading="lazy" />
+          </div>
+          <div class="text">
+            <h3>Mais de uma década acolhendo quem mais precisa</h3>
+            <p>
+              A Amar Itapecerica nasceu da união de famílias atípicas que buscavam informação, apoio
+              mútuo e respeito para seus filhos. Hoje, somos referência regional em ações de
+              inclusão e conscientização sobre o autismo.
+            </p>
+            <p>
+              Acreditamos que a inclusão começa pela escuta — e que cada criança, adolescente e
+              adulto autista merece oportunidades reais para florescer.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-3">
+          <article class="card fade-in">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 3v18M3 12h18" />
+              </svg>
+            </div>
+            <h3>Missão</h3>
+            <p>
+              Promover a inclusão de pessoas com autismo por meio de informação, acolhimento às
+              famílias e ações de impacto na comunidade.
+            </p>
+          </article>
+
+          <article class="card fade-in">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </div>
+            <h3>Visão</h3>
+            <p>
+              Construir, até 2030, uma cidade reconhecida pela acessibilidade, respeito e
+              oportunidades reais para pessoas neurodivergentes.
+            </p>
+          </article>
+
+          <article class="card fade-in">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"
+                />
+              </svg>
+            </div>
+            <h3>Valores</h3>
+            <p>
+              Empatia, transparência, respeito à diversidade e compromisso com cada família que
+              cruza o nosso caminho.
+            </p>
+          </article>
+        </div>
       </div>
-      <div class="text">
-        <h3>Mais de uma década acolhendo quem mais precisa</h3>
-        <p>A Amar Itapecerica nasceu da união de famílias atípicas que buscavam
-        informação, apoio mútuo e respeito para seus filhos. Hoje, somos
-        referência regional em ações de inclusão e conscientização sobre o autismo.</p>
-        <p>Acreditamos que a inclusão começa pela escuta — e que cada criança,
-        adolescente e adulto autista merece oportunidades reais para florescer.</p>
-      </div>
-    </div>
+    </section>
 
-    <div class="cards-3">
-      <article class="card fade-in">
-        <div class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
-        </div>
-        <h3>Missão</h3>
-        <p>Promover a inclusão de pessoas com autismo por meio de informação,
-        acolhimento às famílias e ações de impacto na comunidade.</p>
-      </article>
-
-      <article class="card fade-in">
-        <div class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
-        <h3>Visão</h3>
-        <p>Construir, até 2030, uma cidade reconhecida pela acessibilidade,
-        respeito e oportunidades reais para pessoas neurodivergentes.</p>
-      </article>
-
-      <article class="card fade-in">
-        <div class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-        </div>
-        <h3>Valores</h3>
-        <p>Empatia, transparência, respeito à diversidade e compromisso com
-        cada família que cruza o nosso caminho.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
+    <!-- ============================================================
      PROJETOS
      ============================================================ -->
-<section id="projetos">
-  <div class="container">
-    <div class="section-head fade-in">
-      <span class="section-tag">O que fazemos</span>
-      <h2>Projetos que mudam vidas</h2>
-      <p>Iniciativas contínuas que conectam famílias, escolas e a comunidade
-      em torno de uma cultura de inclusão.</p>
-    </div>
+    <section id="projetos">
+      <div class="container">
+        <div class="section-head fade-in">
+          <span class="section-tag">O que fazemos</span>
+          <h2>Projetos que mudam vidas</h2>
+          <p>
+            Iniciativas contínuas que conectam famílias, escolas e a comunidade em torno de uma
+            cultura de inclusão.
+          </p>
+        </div>
 
-    <div class="projetos-grid">
-      <article class="projeto fade-in">
-        <div class="projeto-img bg1" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div class="projeto-body">
-          <h3>Roda de Famílias</h3>
-          <p>Encontros mensais de troca de experiências entre pais e
-          responsáveis, com mediação de psicólogos voluntários.</p>
-          <a href="#contato" class="projeto-link">Saiba mais →</a>
-        </div>
-      </article>
+        <div class="projetos-grid">
+          <!-- <article class="projeto fade-in">
+            <div class="projeto-img bg1" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div class="projeto-body">
+              <h3>Roda de Famílias</h3>
+              <p>
+                Encontros mensais de troca de experiências entre pais e responsáveis, com mediação
+                de psicólogos voluntários.
+              </p>
+              <a href="#contato" class="projeto-link">Saiba mais →</a>
+            </div>
+          </article> -->
 
-      <article class="projeto fade-in">
-        <div class="projeto-img bg2" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </div>
-        <div class="projeto-body">
-          <h3>Escola Inclui</h3>
-          <p>Capacitação de professores e equipes pedagógicas para receber
-          alunos autistas com qualidade e acolhimento.</p>
-          <a href="#contato" class="projeto-link">Saiba mais →</a>
-        </div>
-      </article>
+          <!-- <article class="projeto fade-in">
+            <div class="projeto-img bg2" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+              </svg>
+            </div>
+            <div class="projeto-body">
+              <h3>Escola Inclui</h3>
+              <p>
+                Capacitação de professores e equipes pedagógicas para receber alunos autistas com
+                qualidade e acolhimento.
+              </p>
+              <a href="#contato" class="projeto-link">Saiba mais →</a>
+            </div>
+          </article> -->
 
-      <article class="projeto fade-in">
-        <div class="projeto-img bg3" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <article class="projeto fade-in">
+            <div class="projeto-img bg3" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <div class="projeto-body">
+              <h3>Abril Azul</h3>
+              <p>
+                Mês de campanhas, palestras gratuitas e ações públicas para conscientizar a cidade
+                sobre o Transtorno do Espectro Autista.
+              </p>
+              <a href="#contato" class="projeto-link">Saiba mais →</a>
+            </div>
+          </article>
         </div>
-        <div class="projeto-body">
-          <h3>Abril Azul</h3>
-          <p>Mês de campanhas, palestras gratuitas e ações públicas para
-          conscientizar a cidade sobre o Transtorno do Espectro Autista.</p>
-          <a href="#contato" class="projeto-link">Saiba mais →</a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
-<!-- ============================================================
+    <!-- ============================================================
      COMO AJUDAR
      ============================================================ -->
-<section class="ajudar" id="ajudar">
-  <div class="container">
-    <div class="section-head fade-in">
-      <span class="section-tag">Junte-se a nós</span>
-      <h2>Existem várias formas de fazer a diferença</h2>
-      <p>Toda contribuição — financeira, em tempo ou em parceria — chega a
-      famílias que precisam de você.</p>
-    </div>
-
-    <div class="ajudar-grid">
-      <div class="ajudar-card featured fade-in">
-        <div class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9C.8 8.5 2.7 4 7 4c2.2 0 3.7 1.2 5 3 1.3-1.8 2.8-3 5-3 4.3 0 6.2 4.5 4.5 8-2.5 4.5-9.5 9-9.5 9z"/></svg>
+    <section class="ajudar" id="ajudar">
+      <div class="container">
+        <div class="section-head fade-in">
+          <span class="section-tag">Junte-se a nós</span>
+          <h2>Existem várias formas de fazer a diferença</h2>
+          <p>
+            Toda contribuição — financeira, em tempo ou em parceria — chega a famílias que precisam
+            de você.
+          </p>
         </div>
-        <h3>Faça uma doação</h3>
-        <p>Sua contribuição mantém nossos projetos ativos durante todo o ano.</p>
-        <a href="#contato" class="btn btn-ghost">Quero doar</a>
-      </div>
 
-      <div class="ajudar-card fade-in">
-        <div class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 8v6M18 11h6"/></svg>
+        <div class="ajudar-grid">
+          <div class="ajudar-card featured fade-in">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 21s-7-4.5-9.5-9C.8 8.5 2.7 4 7 4c2.2 0 3.7 1.2 5 3 1.3-1.8 2.8-3 5-3 4.3 0 6.2 4.5 4.5 8-2.5 4.5-9.5 9-9.5 9z"
+                />
+              </svg>
+            </div>
+            <h3>Faça uma doação</h3>
+            <p>Sua contribuição mantém nossos projetos ativos durante todo o ano.</p>
+            <a href="#contato" class="btn btn-ghost">Quero doar</a>
+          </div>
+
+          <div class="ajudar-card fade-in">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
+                <circle cx="10" cy="7" r="4" />
+                <path d="M21 8v6M18 11h6" />
+              </svg>
+            </div>
+            <h3>Seja voluntário</h3>
+            <p>
+              Doe seu tempo e talento. Temos espaço para todos: profissionais, estudantes e
+              famílias.
+            </p>
+            <a href="#contato" class="btn btn-primary">Quero participar</a>
+          </div>
+
+          <div class="ajudar-card fade-in">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 7h18M3 12h18M3 17h18" />
+              </svg>
+            </div>
+            <h3>Parcerias</h3>
+            <p>É uma empresa? Apoie nossa causa com responsabilidade social e amplie o impacto.</p>
+            <a href="#contato" class="btn btn-primary">Falar com a equipe</a>
+          </div>
         </div>
-        <h3>Seja voluntário</h3>
-        <p>Doe seu tempo e talento. Temos espaço para todos: profissionais,
-        estudantes e famílias.</p>
-        <a href="#contato" class="btn btn-primary">Quero participar</a>
       </div>
+    </section>
 
-      <div class="ajudar-card fade-in">
-        <div class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-        </div>
-        <h3>Parcerias</h3>
-        <p>É uma empresa? Apoie nossa causa com responsabilidade social e
-        amplie o impacto.</p>
-        <a href="#contato" class="btn btn-primary">Falar com a equipe</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
+    <!-- ============================================================
      IMPACTO
      ============================================================ -->
-<section class="impacto">
-  <div class="container">
-    <div class="section-head fade-in">
-      <span class="section-tag">Nossos números</span>
-      <h2>O impacto da nossa rede</h2>
-      <p>Resultados de anos de trabalho coletivo, voluntariado e o apoio
-      essencial de pessoas como você.</p>
-    </div>
+    <section class="impacto">
+      <div class="container">
+        <div class="section-head fade-in">
+          <span class="section-tag">Nossos números</span>
+          <h2>O impacto da nossa rede</h2>
+          <p>
+            Resultados de anos de trabalho coletivo, voluntariado e o apoio essencial de pessoas
+            como você.
+          </p>
+        </div>
 
-    <div class="impacto-grid">
-      <div class="stat fade-in">
-        <div class="stat-num" data-count="520">0</div>
-        <div class="stat-label">Famílias atendidas</div>
+        <div class="impacto-grid">
+          <div class="stat fade-in">
+            <div class="stat-num" data-count="58">0</div>
+            <div class="stat-label">Famílias atendidas</div>
+          </div>
+          <div class="stat fade-in">
+            <div class="stat-num" data-count="5">0</div>
+            <div class="stat-label">Eventos realizados</div>
+          </div>
+          <!-- <div class="stat fade-in">
+            <div class="stat-num" data-count="120">0</div>
+            <div class="stat-label">Voluntários ativos</div>
+          </div>
+          <div class="stat fade-in">
+            <div class="stat-num" data-count="15">0</div>
+            <div class="stat-label">Escolas parceiras</div>
+          </div> -->
+        </div>
       </div>
-      <div class="stat fade-in">
-        <div class="stat-num" data-count="48">0</div>
-        <div class="stat-label">Eventos realizados</div>
-      </div>
-      <div class="stat fade-in">
-        <div class="stat-num" data-count="120">0</div>
-        <div class="stat-label">Voluntários ativos</div>
-      </div>
-      <div class="stat fade-in">
-        <div class="stat-num" data-count="15">0</div>
-        <div class="stat-label">Escolas parceiras</div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ============================================================
+    <!-- ============================================================
      DEPOIMENTOS
      ============================================================ -->
-<section id="depoimentos">
-  <div class="container">
-    <div class="section-head fade-in">
-      <span class="section-tag">Depoimentos</span>
-      <h2>Histórias que nos movem</h2>
-    </div>
-
-    <div class="depoimentos-grid">
-      <div class="depoimento fade-in">
-        <span class="quote-mark" aria-hidden="true">”</span>
-        <p>Quando recebi o diagnóstico do meu filho, me senti perdida. A Amar
-        Itapecerica me mostrou que eu não estava sozinha. Hoje somos uma
-        família mais forte.</p>
-        <div class="depoimento-autor">
-          <div class="avatar photo ph1" role="img" aria-label="Foto de Carla Mendes"></div>
-          <div class="autor-info"><strong>Carla Mendes</strong><small>Mãe atípica</small></div>
+    <section id="depoimentos">
+      <div class="container">
+        <div class="section-head fade-in">
+          <span class="section-tag">Depoimentos</span>
+          <h2>Histórias que nos movem</h2>
         </div>
-      </div>
 
-      <div class="depoimento fade-in">
-        <span class="quote-mark" aria-hidden="true">”</span>
-        <p>Ser voluntário aqui transformou a forma como enxergo a inclusão.
-        Cada encontro é uma lição de empatia e propósito.</p>
-        <div class="depoimento-autor">
-          <div class="avatar photo ph2" role="img" aria-label="Foto de Rafael Souza"></div>
-          <div class="autor-info"><strong>Rafael Souza</strong><small>Voluntário há 3 anos</small></div>
-        </div>
-      </div>
+        <div class="depoimentos-grid">
+          <div class="depoimento fade-in">
+            <span class="quote-mark" aria-hidden="true">”</span>
+            <p>
+              A AMAR é muito mais do que um grupo, é uma rede de apoio que faz a diferença na vida
+              da gente. Estar aqui me trouxe acolhimento, aprendizado e a sensação de não estar
+              sozinha nos desafios do dia a dia. É um espaço onde encontramos empatia, troca
+              verdadeira e força para continuar, mesmo nos momentos mais difíceis. Sou muito grata
+              por fazer parte disso.
+            </p>
+            <div class="depoimento-autor">
+              <!-- <div class="avatar photo ph1" role="img" aria-label="Foto de Carla Mendes"></div> -->
+              <div class="autor-info"><strong>Dayse Gondim</strong><small>Mãe atípica</small></div>
+            </div>
+          </div>
 
-      <div class="depoimento fade-in">
-        <span class="quote-mark" aria-hidden="true">”</span>
-        <p>O projeto Escola Inclui mudou completamente nossa rotina escolar.
-        Os professores hoje têm preparo e olhar humano para nossas crianças.</p>
-        <div class="depoimento-autor">
-          <div class="avatar photo ph3" role="img" aria-label="Foto de Juliana Prado"></div>
-          <div class="autor-info"><strong>Juliana Prado</strong><small>Diretora pedagógica</small></div>
-        </div>
+          <div class="depoimento fade-in">
+            <span class="quote-mark" aria-hidden="true">”</span>
+            <p>
+              Estar na AMAR – associação de mães de autistas é, acima de tudo, um ato de amor, força e união. 
+              É sobre encontrar acolhimento em um lugar onde ninguém precisa explicar o que sente, porque todas 
+              vivem desafios parecidos.
+              Você está na AMAR porque entende que ninguém deve enfrentar sozinho a jornada do autismo. 
+              A associação se torna uma rede de apoio essencial, onde há troca de experiências, aprendizado 
+              constante e, principalmente, empatia verdadeira. Ali, cada conquista — por menor que pareça 
+              para os outros — é celebrada como uma grande vitória.
+              Também é um espaço de luta: luta por direitos, por inclusão, por respeito e por uma sociedade 
+              mais preparada para acolher as diferenças. 
+              Fazer parte disso mostra coragem e determinação em buscar o melhor para seu filho e para tantas outras famílias.
+              No fundo, estar na AMAR é sobre isso:
+              não desistir, se fortalecer em conjunto e transformar desafios em esperança.💙
+            </p>
+            <div class="depoimento-autor">
+              <!-- <div class="avatar photo ph2" role="img" aria-label="Foto de Rafael Souza"></div> -->
+              <div class="autor-info">
+                <strong>Janaína</strong><small>Mãe atípica</small>
+              </div>
+            </div>
+          </div>
+<!-- 
+          <div class="depoimento fade-in">
+            <span class="quote-mark" aria-hidden="true">”</span>
+            <p>
+              O projeto Escola Inclui mudou completamente nossa rotina escolar. Os professores hoje
+              têm preparo e olhar humano para nossas crianças.
+            </p>
+            <div class="depoimento-autor">
+              <div class="avatar photo ph3" role="img" aria-label="Foto de Juliana Prado"></div>
+              <div class="autor-info">
+                <strong>Juliana Prado</strong><small>Diretora pedagógica</small>
+              </div>
+            </div>
+          </div>
+        </div> -->
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ============================================================
+    <!-- ============================================================
      CONTATO
      ============================================================ -->
-<section class="contato" id="contato">
-  <div class="container">
-    <div class="section-head fade-in">
-      <span class="section-tag">Fale conosco</span>
-      <h2>Vamos construir juntos uma cidade mais inclusiva</h2>
-      <p>Tem dúvidas, quer doar, se voluntariar ou propor uma parceria?
-      Adoraríamos ouvir você.</p>
-    </div>
+    <section class="contato" id="contato">
+      <div class="container">
+        <div class="section-head fade-in">
+          <span class="section-tag">Fale conosco</span>
+          <h2>Vamos construir juntos uma cidade mais inclusiva</h2>
+          <p>
+            Tem dúvidas, quer doar, se voluntariar ou propor uma parceria? Adoraríamos ouvir você.
+          </p>
+        </div>
 
-    <div class="contato-grid">
-      <div class="contato-info fade-in">
-        <h3>Informações de contato</h3>
-        <!-- <p>Estamos disponíveis de segunda a sexta, das 9h às 17h.</p> -->
+        <div class="contato-grid">
+          <div class="contato-info fade-in">
+            <h3>Informações de contato</h3>
+            <!-- <p>Estamos disponíveis de segunda a sexta, das 9h às 17h.</p> -->
 
-        <!-- <div class="info-item">
+            <!-- <div class="info-item">
           <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div><strong>Endereço</strong><span>Itapecerica/MG · Centro</span></div>
         </div> -->
 
-        <div class="info-item">
-          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg></div>
-          <div><strong>E-mail</strong><span>contato@amaritapecerica.org.br</span></div>
-        </div>
+            <div class="info-item">
+              <div class="ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16v16H4z" />
+                  <path d="m4 4 8 8 8-8" />
+                </svg>
+              </div>
+              <div><strong>E-mail</strong><span>contato@amaritapecerica.org.br</span></div>
+            </div>
 
-        <!-- <div class="info-item">
+            <!-- <div class="info-item">
           <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.3 1L7 10.5a16 16 0 0 0 6.5 6.5l1.7-1.7a1 1 0 0 1 1-.3l4 1a1 1 0 0 1 .8 1z"/></svg></div>
           <div><strong>Telefone</strong><span>(37) 99999-0000</span></div>
         </div> -->
 
-        <!-- <div class="mapa" role="img" aria-label="Mapa de Itapecerica/MG (placeholder)">
+            <!-- <div class="mapa" role="img" aria-label="Mapa de Itapecerica/MG (placeholder)">
           <div class="mapa-pin">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
             <small>Itapecerica · Minas Gerais</small>
           </div>
         </div> -->
+          </div>
+
+          <form class="form fade-in" id="formContato" novalidate>
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="voce@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                placeholder="Como podemos te ajudar?"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+            <div class="form-msg" id="formMsg">
+              ✓ Mensagem enviada! Entraremos em contato em breve.
+            </div>
+          </form>
+        </div>
       </div>
+    </section>
 
-      <form class="form fade-in" id="formContato" novalidate>
-        <div class="form-group">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
-        </div>
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="voce@email.com" required />
-        </div>
-        <div class="form-group">
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" placeholder="Como podemos te ajudar?" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar mensagem</button>
-        <div class="form-msg" id="formMsg">✓ Mensagem enviada! Entraremos em contato em breve.</div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
+    <!-- ============================================================
      FOOTER
      ============================================================ -->
-<footer class="footer">
-  <div class="container footer-grid">
-    <div class="footer-about">
-      <a href="#inicio" class="logo">
-        <span class="logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9C.8 8.5 2.7 4 7 4c2.2 0 3.7 1.2 5 3 1.3-1.8 2.8-3 5-3 4.3 0 6.2 4.5 4.5 8-2.5 4.5-9.5 9-9.5 9z"/></svg>
-        </span>
-        Amar Itapecerica
-      </a>
-      <p>ONG dedicada à causa do autismo em Itapecerica/MG: conscientização,
-      apoio às famílias e inclusão social.</p>
-      <div class="socials" aria-label="Redes sociais">
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.5c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.5.7-1.5 1.5V12h2.6l-.4 3h-2.2v7A10 10 0 0 0 22 12z"/></svg></a>
-        <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 3.9A11 11 0 0 0 3.4 18.4L2 22l3.7-1.3A11 11 0 0 0 20 3.9zm-7.9 16.4a9 9 0 0 1-4.6-1.3l-.3-.2-2.2.7.8-2.1-.2-.3a9 9 0 1 1 6.5 3.2zm5-6.7c-.3-.2-1.7-.8-1.9-.9s-.5-.1-.7.2-.7.9-.9 1.1-.4.2-.6.1c-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.7-1.5-1.9s0-.4.1-.5l.4-.5c.1-.2.2-.3.2-.5s-.1-.4-.1-.5-.7-1.7-.9-2.3-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1.1 2.8 1.2 3 2.2 3.3 5.2 4.6c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4s.3-1.2.2-1.4-.3-.2-.6-.4z"/></svg></a>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-about">
+          <a href="#inicio" class="logo">
+            <img class="logo-mark" src="images/amar-logo-100X100.jpeg" alt="" aria-hidden="true" />
+            Amar Itapecerica
+          </a>
+          <p>
+            ONG dedicada à causa do autismo em Itapecerica/MG: conscientização, apoio às famílias e
+            inclusão social.
+          </p>
+          <div class="socials" aria-label="Redes sociais">
+            <a href="#" aria-label="Instagram"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" /></svg
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.5c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.5.7-1.5 1.5V12h2.6l-.4 3h-2.2v7A10 10 0 0 0 22 12z"
+                /></svg
+            ></a>
+            <a href="#" aria-label="WhatsApp"
+              ><svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20 3.9A11 11 0 0 0 3.4 18.4L2 22l3.7-1.3A11 11 0 0 0 20 3.9zm-7.9 16.4a9 9 0 0 1-4.6-1.3l-.3-.2-2.2.7.8-2.1-.2-.3a9 9 0 1 1 6.5 3.2zm5-6.7c-.3-.2-1.7-.8-1.9-.9s-.5-.1-.7.2-.7.9-.9 1.1-.4.2-.6.1c-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.7-1.5-1.9s0-.4.1-.5l.4-.5c.1-.2.2-.3.2-.5s-.1-.4-.1-.5-.7-1.7-.9-2.3-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1.1 2.8 1.2 3 2.2 3.3 5.2 4.6c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4s.3-1.2.2-1.4-.3-.2-.6-.4z"
+                /></svg
+            ></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#ajudar">Como Ajudar</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="#sobre">Quem somos</a></li>
+            <li><a href="#projetos">Transparência</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#ajudar">Seja voluntário</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contato</h4>
+          <ul>
+            <li>Itapecerica/MG</li>
+            <li>contato@amaritapecerica.org.br</li>
+            <!-- <li>(37) 99999-0000</li> -->
+          </ul>
+        </div>
       </div>
-    </div>
+      <div class="footer-bottom">
+        <span>© 2025 Amar Itapecerica. Todos os direitos reservados.</span>
+        <span>Feito com 💙 para a causa do autismo.</span>
+        <span class="design-credit">Desenvolvido por Jota</span>
+      </div>
+    </footer>
 
-    <div>
-      <h4>Navegação</h4>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#ajudar">Como Ajudar</a></li>
-      </ul>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    <div>
-      <h4>Institucional</h4>
-      <ul>
-        <li><a href="#sobre">Quem somos</a></li>
-        <li><a href="#projetos">Transparência</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="#ajudar">Seja voluntário</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Contato</h4>
-      <ul>
-        <li>Itapecerica/MG</li>
-        <li>contato@amaritapecerica.org.br</li>
-        <!-- <li>(37) 99999-0000</li> -->
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 Amar Itapecerica. Todos os direitos reservados.</span>
-    <span>Feito com 💙 para a causa do autismo.</span>
-    <span class="design-credit">Desenvolvido por Jota</span>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script src="js/main.js"></script>
-
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
