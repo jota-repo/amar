@@ -83,11 +83,68 @@
         </div>
 
         <div class="sobre-media fade-in">
-          <div class="img-wrap">
-            <img src="images/sobre.jpg" alt="Mãe abraçando seu filho com carinho" loading="lazy" />
+          <div
+            class="img-wrap sobre-carousel"
+            id="sobreCarousel"
+            aria-label="Galeria de fotos da Amar Itapecerica"
+          >
+            <div class="carousel-track" id="sobreCarouselTrack">
+              <div class="carousel-slide is-active">
+                <img
+                  src="images/carrossel/amar-fotos-toten-01.jpeg"
+                  alt="Famílias reunidas em ação da Amar Itapecerica"
+                  loading="lazy"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="images/carrossel/amar-fotos-toten-02.jpeg"
+                  alt="Participantes em encontro de apoio da Amar"
+                  loading="lazy"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="images/carrossel/amar-fotos-toten-03.jpeg"
+                  alt="Momento de acolhimento com famílias da associação"
+                  loading="lazy"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="images/carrossel/amar-fotos-toten-04.jpeg"
+                  alt="Atividade comunitária promovida pela Amar Itapecerica"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="carousel-btn prev"
+              id="sobrePrev"
+              aria-label="Foto anterior"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              class="carousel-btn next"
+              id="sobreNext"
+              aria-label="Próxima foto"
+            >
+              ›
+            </button>
+
+            <div class="carousel-dots" id="sobreDots" aria-label="Selecionar foto do carrossel">
+              <button type="button" class="dot is-active" aria-label="Ir para foto 1"></button>
+              <button type="button" class="dot" aria-label="Ir para foto 2"></button>
+              <button type="button" class="dot" aria-label="Ir para foto 3"></button>
+              <button type="button" class="dot" aria-label="Ir para foto 4"></button>
+            </div>
           </div>
           <div class="text">
-            <h3>Mais de uma década acolhendo quem mais precisa</h3>
+            <h3>Acolhendo quem mais precisa</h3>
             <p>
               A Amar Itapecerica nasceu da união de famílias atípicas que buscavam informação, apoio
               mútuo e respeito para seus filhos. Hoje, somos referência regional em ações de
@@ -338,41 +395,51 @@
           <div class="depoimento fade-in">
             <span class="quote-mark" aria-hidden="true">”</span>
             <p>
-              Estar na AMAR – associação de mães de autistas é, acima de tudo, um ato de amor, força e união. 
-              É sobre encontrar acolhimento em um lugar onde ninguém precisa explicar o que sente, porque todas 
-              vivem desafios parecidos.
-              Você está na AMAR porque entende que ninguém deve enfrentar sozinho a jornada do autismo. 
-              A associação se torna uma rede de apoio essencial, onde há troca de experiências, aprendizado 
-              constante e, principalmente, empatia verdadeira. Ali, cada conquista — por menor que pareça 
-              para os outros — é celebrada como uma grande vitória.
-              Também é um espaço de luta: luta por direitos, por inclusão, por respeito e por uma sociedade 
-              mais preparada para acolher as diferenças. 
-              Fazer parte disso mostra coragem e determinação em buscar o melhor para seu filho e para tantas outras famílias.
-              No fundo, estar na AMAR é sobre isso:
-              não desistir, se fortalecer em conjunto e transformar desafios em esperança.💙
+              Estar na AMAR – associação de mães de autistas é, acima de tudo, um ato de amor, força
+              e união. É sobre encontrar acolhimento em um lugar onde ninguém precisa explicar o que
+              sente, porque todas vivem desafios parecidos. Você está na AMAR porque entende que
+              ninguém deve enfrentar sozinho a jornada do autismo. A associação se torna uma rede de
+              apoio essencial, onde há troca de experiências, aprendizado constante e,
+              principalmente, empatia verdadeira. Ali, cada conquista — por menor que pareça para os
+              outros — é celebrada como uma grande vitória. Também é um espaço de luta: luta por
+              direitos, por inclusão, por respeito e por uma sociedade mais preparada para acolher
+              as diferenças. Fazer parte disso mostra coragem e determinação em buscar o melhor para
+              seu filho e para tantas outras famílias. No fundo, estar na AMAR é sobre isso: não
+              desistir, se fortalecer em conjunto e transformar desafios em esperança.💙
             </p>
             <div class="depoimento-autor">
               <!-- <div class="avatar photo ph2" role="img" aria-label="Foto de Rafael Souza"></div> -->
-              <div class="autor-info">
-                <strong>Janaína</strong><small>Mãe atípica</small>
-              </div>
+              <div class="autor-info"><strong>Janaína</strong><small>Mãe atípica</small></div>
             </div>
           </div>
-<!-- 
+
           <div class="depoimento fade-in">
             <span class="quote-mark" aria-hidden="true">”</span>
             <p>
-              O projeto Escola Inclui mudou completamente nossa rotina escolar. Os professores hoje
-              têm preparo e olhar humano para nossas crianças.
+              Amar tem me ajudado muito na questão da divulgação e conscientização sobre o autismo.
+              Aqui no grupo, vejo que passamos por desafios e preocupações semelhantes, carregamos a
+              mesma carga e, juntos, buscamos uma movimentação por melhorias. O grupo contribui para
+              a melhoria dos tratamentos e para a luta por direitos, além de ser um espaço
+              importante para tirar dúvidas, compartilhar inseguranças, desabafar e trocar ideias.
+              Foi através do grupo que comecei a entender melhor o que meu filho vivia, suas
+              dificuldades de desenvolvimento e todo o processo. Uma mãe ajudando a outra faz toda a
+              diferença. O grupo foi fundamental para o esclarecimento de muitas coisas que eu não
+              entendia e, em alguns momentos, até tinha dificuldade de aceitar, pois queria ver a
+              evolução do meu filho. Sou muito grata ao grupo e às mães que sempre me ajudaram.
+              Gratidão Isso é o que o grupo realmente fez por mim, eu no começo era sozinha depois
+              do grupo me senti acolhida. Juntas podemos mais uma passa pra outra, uma desabafa com
+              a outra, Gratidão de verdade Com a movimentação, as pessoas vão compreender mais o
+              porquê do jeitinho dos nossos filhos 💕💕 com o tempo só melhoras e progresso 🙏🙏🙏
+              Acho que às vezes tenho muito mais apoio aqui do que da família. Aqui uma mãe sabe o
+              que realmente vivemos, os outros acham tudo fácil, vai melhorar quem preocupa e luta
+              no dia a dia somos nós.
             </p>
             <div class="depoimento-autor">
-              <div class="avatar photo ph3" role="img" aria-label="Foto de Juliana Prado"></div>
-              <div class="autor-info">
-                <strong>Juliana Prado</strong><small>Diretora pedagógica</small>
-              </div>
+              <!-- <div class="avatar photo ph3" role="img" aria-label="Foto de Juliana Prado"></div> -->
+              <div class="autor-info"><strong>Beatriz</strong><small>Mãe atípica</small></div>
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </section>
 
