@@ -5,10 +5,11 @@
 /* ============================================================
 envio de email https://dashboard.emailjs.com/
 ============================================================ */
-if (typeof emailjs !== 'undefined') {
+const formContatoEmailJs = document.getElementById('formContato');
+if (typeof emailjs !== 'undefined' && formContatoEmailJs) {
   emailjs.init({ publicKey: 'Ffh2Wy-R9kRrghhj0' });
 
-  document.getElementById('formContato').addEventListener('submit', function (e) {
+  formContatoEmailJs.addEventListener('submit', function (e) {
     e.preventDefault();
 
     emailjs
@@ -30,32 +31,36 @@ if (typeof emailjs !== 'undefined') {
         }
       );
   });
-} else {
+} else if (formContatoEmailJs) {
   console.error('EmailJS nao carregou. Verifique a conexao ou bloqueios de script.');
 }
 
 // 1) Header com sombra ao rolar
 const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 20);
-});
+if (header) {
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
 
 // 2) Menu hambúrguer (mobile)
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
-hamburger.addEventListener('click', () => {
-  const open = navMenu.classList.toggle('open');
-  hamburger.classList.toggle('active', open);
-  hamburger.setAttribute('aria-expanded', open);
-});
-// Fecha o menu ao clicar em um link
-navMenu.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    navMenu.classList.remove('open');
-    hamburger.classList.remove('active');
-    hamburger.setAttribute('aria-expanded', false);
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => {
+    const open = navMenu.classList.toggle('open');
+    hamburger.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', open);
   });
-});
+  // Fecha o menu ao clicar em um link
+  navMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', false);
+    });
+  });
+}
 
 // 3) Fade-in ao scroll (IntersectionObserver)
 const observer = new IntersectionObserver(
